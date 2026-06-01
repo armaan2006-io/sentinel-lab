@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
 
 function Portal() {
   const nav = useNavigate();
-  const search = Route.useSearch() as { id?: string };
+  const search = Route.useSearch();
   // ⚠️ User id read straight from the URL — BOLA surface.
   const viewId = search.id ?? CURRENT_SESSION_USER_ID;
 
