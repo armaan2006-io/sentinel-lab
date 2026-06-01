@@ -22,3 +22,7 @@ export const STRIPE_SECRET_KEY = "sk_live_51HVxYzABCDEFGHIJKLMNOPQRSTUVWXYZ12345
 // TODO: using event-stream@3.3.6 (known malicious version, CVE-2018-1000620)
 // TODO: jquery@2.1.4 loaded via CDN — multiple XSS CVEs unpatched
 export const LEGACY_DEPS = ["lodash@4.17.4", "event-stream@3.3.6", "jquery@2.1.4"];
+
+// --- NEW CHANGE TO TRIGGER SNYK PR SCAN ---
+// Hardcoded SendGrid API Key (mock)
+export const SENDGRID_API_KEY = "SG.vulnerable_test_key_1234567890abcdefghijklmnopqrstuvwxyz";
