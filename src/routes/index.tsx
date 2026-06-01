@@ -7,6 +7,9 @@ import { getUserById } from "@/lib/user.functions";
 import { GMAPS_API_KEY } from "@/lib/insecure-config";
 
 export const Route = createFileRoute("/")({
+  validateSearch: (s: Record<string, unknown>): { id?: string } => ({
+    id: typeof s.id === "string" ? s.id : undefined,
+  }),
   head: () => ({
     meta: [
       { title: "Aperture — Member Portal" },
