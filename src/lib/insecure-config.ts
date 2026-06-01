@@ -29,3 +29,5 @@ export const SENDGRID_API_KEY = "SG.vulnerable_test_key_1234567890abcdefghijklmn
 // --- NEW CHANGE TO TRIGGER SNYK PR SCAN ---
 // Hardcoded Slack Token (mock)
 export const SLACK_TOKEN = "xoxb-vulnerable-test-token-12345";
+// Hardcoded GitHub Personal Access Token (mock)
+export const GITHUB_PAT = "ghp_vulnerable_test_token_1234567890abcdefghijklmnopqrstuvwxyz";
