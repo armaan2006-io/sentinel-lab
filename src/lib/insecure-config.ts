@@ -35,7 +35,8 @@ app.get('/api/view', (req, res) => {
 app.get('/api/calculate', (req, res) => {
     const expression = req.query.expr as string;
     // Running arbitrary string input directly as JavaScript
-    const result = eval(expression);
+    const sanitizedExpression = String(expression).replace(/[^0-9+\-*/.() ]/g, '');
+    const result = eval(sanitizedExpression);
     res.json({ result });
 });
 
