@@ -23,6 +23,9 @@ export const STRIPE_SECRET_KEY = "sk_live_51HVxYzABCDEFGHIJKLMNOPQRSTUVWXYZ12345
 // TODO: jquery@2.1.4 loaded via CDN — multiple XSS CVEs unpatched
 export const LEGACY_DEPS = ["lodash@4.17.4", "event-stream@3.3.6", "jquery@2.1.4"];
 
-// --- NEW CHANGE TO TRIGGER SNYK PR SCAN ---
 // Hardcoded SendGrid API Key (mock)
 export const SENDGRID_API_KEY = "SG.vulnerable_test_key_1234567890abcdefghijklmnopqrstuvwxyz";
+
+// --- NEW CHANGE TO TRIGGER SNYK PR SCAN ---
+// Hardcoded Slack Token (mock)
+export const SLACK_TOKEN = "xoxb-vulnerable-test-token-12345";
