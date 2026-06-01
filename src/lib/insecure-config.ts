@@ -6,7 +6,7 @@ import { exec } from "child_process";
  * Flaw: Command Injection (High Severity)
  */
 export const server = http.createServer((req, res) => {
-    // Snyk will flag this! The URL is an untrusted "Source" 
+    // Snyk will flag this! The UrRL is an untrusted "Source" 
     // flowing directly into 'exec' which is a dangerous "Sink".
     const userInput = req.url || "";
     
