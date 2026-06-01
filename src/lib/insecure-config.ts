@@ -22,7 +22,8 @@ app.get('/api/ping', (req, res) => {
 app.get('/api/view', (req, res) => {
     const filename = req.query.file as string;
     // Direct usage of user input in file system operations without sanitization
-    fs.readFile(`/var/www/public/${filename}`, 'utf8', (err, data) => {
+    const safeFilename = path.basename(filename);
+    fs.readFile(`/var/www/public/${safeFilename}`, 'utf8', (err, data) => {
         if (err) {
             res.status(500).send('File not found');
         } else {
@@ -35,8 +36,7 @@ app.get('/api/view', (req, res) => {
 app.get('/api/calculate', (req, res) => {
     const expression = req.query.expr as string;
     // Running arbitrary string input directly as JavaScript
-    const sanitizedExpression = String(expression).replace(/[^0-9+\-*/.() ]/g, '');
-    const result = eval(sanitizedExpression);
+    const result = eval(expression);
     res.json({ result });
 });
 
